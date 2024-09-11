@@ -36,6 +36,7 @@ jobs:
                 uses: actions/download-artifact@v3
                 with:
                     name: artifacts
+                    path: ./dist
             # Check if dist folder exists
             -   name: Verify dist folder
                 run: ls -la ./dist
