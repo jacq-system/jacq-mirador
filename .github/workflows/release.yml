@@ -19,6 +19,9 @@ jobs:
                 run: npm install
             -   name: Build project
                 run: npm run build
+              # Check if dist folder exists
+            -   name: Verify dist folder
+                run: ls -la ./dist
             -   name: Upload build artifacts
                 uses: actions/upload-artifact@v3
                 with:
@@ -39,6 +42,6 @@ jobs:
             -   name: Create GitHub Release
                 uses: softprops/action-gh-release@v1
                 with:
-                    files: ./dist/
+                    files: ./dist/**
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
