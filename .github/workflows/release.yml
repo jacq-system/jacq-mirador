@@ -2,8 +2,8 @@ name: Build and Release
 
 on:
     push:
-#        tags:
-#            - 'v*.*.*.*'
+        tags:
+            - 'v*.*.*.*'
 
 jobs:
     build:
@@ -37,9 +37,6 @@ jobs:
                 with:
                     name: artifacts
                     path: ./dist
-            # Check if dist folder exists
-            -   name: Verify dist folder
-                run: ls -la ./dist
             -   name: Create GitHub Release
                 uses: softprops/action-gh-release@v1
                 with:
