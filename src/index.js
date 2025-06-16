@@ -1,10 +1,14 @@
-import Mirador from 'mirador/dist/es/src/index';
-import downloadDialogPlugin from 'mirador-downloaddialog/es';
+import Mirador from 'mirador';
+import miradorDownloadPlugins from 'mirador-dl-plugin';
 
 document.addEventListener("DOMContentLoaded", () => {
     const config = {
-        id: 'mirador', windows: [{
-            manifestId: document.getElementById("mirador").getAttribute("data-manifestId"),
+        id: 'mirador',
+        miradorDownloadPlugin: {
+            restrictDownloadOnSizeDefinition: true,
+        },
+        windows: [{
+            loadedManifest: document.getElementById("mirador").getAttribute("data-manifestId"),
             thumbnailNavigationPosition: 'far-right',
         }], window: {
             allowClose: false,
@@ -20,6 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
             enabled: false
         }
     };
-    Mirador.viewer(config, [...downloadDialogPlugin]);
+    Mirador.viewer(config, [...miradorDownloadPlugins]);
 
 });
