@@ -1,6 +1,6 @@
 {
   "name": "jacq-mirador",
-  "version": "0.2",
+  "version": "4.0.0.1",
   "description": "Mirador viewer with configuration for the JACQ hebarium needs",
   "keywords": [
     "jacq, herbarium"
@@ -15,12 +15,11 @@
   "license": "ISC",
   "homepage": "https://jacq.org",
   "dependencies": {
-    "mirador-dl-plugin": "git+https://github.com/ProjectMirador/mirador-dl-plugin.git#v1.0.0-alpha.5"
+    "mirador-dl-plugin": "v1.0.0-rc.1"
   },
   "devDependencies": {
     "@babel/core": "^7",
     "babel-loader": "^10",
-    "node-polyfill-webpack-plugin": "^4",
     "webpack": "^5",
     "webpack-cli": "^6"
   }
